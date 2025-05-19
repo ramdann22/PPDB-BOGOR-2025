@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPDB Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f8;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #0066cc;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #e0f0ff;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .hero a {
+            background-color: #004080;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .hero a:hover {
+            background-color: #0066cc;
+        }
+
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .sub {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: pink;
+            padding: 40px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: relative;
+        }
+
+        .container.active {
+            background-color: #ffb6c1;
+        }
+
+        .container img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .container h3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .container.active .arrow {
+            transform: rotate(90deg);
+        }
+
+        .description {
+            display: block;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+            margin-top: 10px;
+        }
+
+        .container.active .description {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        section {
+            padding: 40px;
+            background-color: #fff;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #0066cc;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const containers = document.querySelectorAll('.container');
+
+            containers.forEach(container => {
+                container.addEventListener('click', function () {
+                    const isActive = container.classList.contains('active');
+
+                    // Tutup semua deskripsi
+                    containers.forEach(c => c.classList.remove('active'));
+
+                    // Buka hanya jika belum aktif
+                    if (!isActive) {
+                        container.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>PPDB SMK BINA INFORMATIKA</h1>
+        <p>Tahun ajaran 2025/2026</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="informasi.html">Jurusan</a>
+        <a href="alur.html">Alur</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="jurusan.html">Informasi</a>
+    </nav>
+
+    <h1 style="text-align: center; padding-top: 20px;">Kompetensi Keahlian</h1>
+
+    <div class="sub">
+        <div class="container">
+            <h3>
+                Teknik Komputer dan Jaringan (TKJ)
+                <span class="arrow">&#9654;</span>
+            </h3>
+            <div class="description">
+                <p>
+                    Jurusan TKJ membekali siswa dengan keterampilan teknis dalam membangun dan mengelola jaringan komputer, serta troubleshooting perangkat keras dan jaringan.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3>
+                Rekayasa Perangkat Lunak (RPL)
+                <span class="arrow">&#9654;</span>
+            </h3>
+            <div class="description">
+                <p>
+                    RPL mengajarkan siswa membuat aplikasi menggunakan berbagai bahasa pemrograman, mulai dari konsep hingga implementasi.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3>
+                Perbankan dan Keuangan Makro (PKM)
+                <span class="arrow">&#9654;</span>
+            </h3>
+            <div class="description">
+                <p>
+                    PKM mempersiapkan siswa untuk berkarir di dunia perbankan, administrasi keuangan, dan lembaga keuangan lainnya.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3>
+                Otomatisasi dan Tata Kelola Perkantoran (OTKP)
+                <span class="arrow">&#9654;</span>
+            </h3>
+            <div class="description">
+                <p>
+                    Jurusan OTKP membekali siswa dengan keterampilan mengelola operasional kantor secara efisien menggunakan teknologi terkini.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3>
+                Multimedia (MM)
+                <span class="arrow">&#9654;</span>
+            </h3>
+            <div class="description">
+                <p>
+                    MM mengembangkan kreativitas siswa dalam bidang seni digital, visual, dan teknologi media untuk kebutuhan promosi dan hiburan.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 PPDB SMK BINA INFORMATIKA.
+    </footer>
+
+</body>
+</html>
